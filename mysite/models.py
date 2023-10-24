@@ -3,6 +3,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.status.PUBLISHED)
+
+
 class Post(models.Model):
 
     class Status(models.TextChoices):
@@ -19,12 +24,11 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT)
+    object = models.Manager()
+    published = PublishedManager()
 
     class Meta:
         ordering = ['-publish']
-        indexes = [
-            models.Index(fields=['-publish']),
-        ]
 
     def __str__(self):
         return self.title
