@@ -1,8 +1,9 @@
 {% extends "mysite/base.html" %}
 
-{% block title %}My website{% endblock %}
+{% block title %}My Blog{% endblock %}
 
 {% block content %}
+  <h1>Witam na mojej stronie.</h1>
   {% for post in posts %}
     <h2>
       <a href="{% url 'mysite:post_detail' post.id %}">
@@ -15,3 +16,6 @@
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
 {% endblock %}
+
+
+<p><a  href="#" >Learn more &raquo;</a></p>
