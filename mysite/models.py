@@ -56,7 +56,8 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.BooleanField(default=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['created']
@@ -65,4 +66,4 @@ class Comment(models.Model):
         ]
 
     def __str__(self):
-        return f'Komentarz dodany przez {self.name} dla posta {self.post}'
+        return f'Comment by {self.name} on {self.post}'

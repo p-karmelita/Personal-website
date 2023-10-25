@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+
+<h2>Dodaj nowy komentarz</h2>
+<form action="{% url "mysite:post_comment" post.id %}" method="post">
+{% csrf_token %}
+{{ form.name|as_crispy_field }}
+{{ form.email|as_crispy_field }}
+{{ form.body|as_crispy_field }}
+<p><input type="submit" value="Dodaj komentarz"></p>
+</form>

@@ -17,5 +17,21 @@
      {% post_to_facebook object_or_url "Udostępnij na Facebooku" %}
      {% post_to_linkedin "Udostępnij na LinkedIn." %}
   </p>
-
+{% with comments.count as total_comments %}
+    <h2>
+      {{ total_comments }} comment{{ total_comments|pluralize }}
+    </h2>
+  {% endwith %}
+  {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Komentarz {{ forloop.counter }} dodany przez {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>Nie ma jeszcze żadnych komentarzy.</p>
+  {% endfor %}
+  {% include "mysite/post/includes/comment_form.html" %}
 {% endblock %}
