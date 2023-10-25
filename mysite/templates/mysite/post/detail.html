@@ -1,5 +1,7 @@
 {% extends "mysite/base.html" %}
 
+{% load social_share %}
+
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
@@ -12,5 +14,8 @@
     <a href="{% url "mysite:post_share" post.id %}">
     Udostępnij post
     </a>
+     {% post_to_facebook object_or_url "Udostępnij na Facebooku" %}
+     {% post_to_linkedin "Udostępnij na LinkedIn." %}
   </p>
+
 {% endblock %}
