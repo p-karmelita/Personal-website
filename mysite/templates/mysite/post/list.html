@@ -1,5 +1,5 @@
 {% extends "mysite/base.html" %}
-
+{% load mysite_tags %}
 {% block title %}Strona Internetowa Piotra Karmelity{% endblock %}
 
 {% block content %}
@@ -26,4 +26,7 @@
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
 {% include "pagination.html" with page=posts %}
+Dotychczas opublikowałem {% total_posts %} postów.
+<p>Najnowsze posty:</p>
+{% show_latest_posts 3 %}
 {% endblock %}
