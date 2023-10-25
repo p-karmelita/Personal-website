@@ -3,3 +3,4 @@ python-dotenv==1.0.0
 crispy-bootstrap5==0.7
 django-crispy-forms==2.1
 flake8==6.1.0
+django-social-share==2.3.0
