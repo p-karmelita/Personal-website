@@ -39,4 +39,9 @@ Dotychczas opublikowałem {% total_posts %} postów.
   </li>
   {% endfor %}
 </ul>
+<p>
+
+  <a href="{% url "mysite:post_feed" %}">
+  Subskrybuj mój kanał RSS</a>
+</p>
 {% endblock %}
