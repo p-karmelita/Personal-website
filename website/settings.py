@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'django_social_share',
     'taggit',
     'mysite.apps.MysiteConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
