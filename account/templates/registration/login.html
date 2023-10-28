@@ -1,0 +1,16 @@
+{% extends "mysite/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Logowanie{% endblock %}
+
+{% block content %}
+<h1>Logowanie</h1>
+<p>Wypełnij poniższy formularz, aby się zalogować:</p>
+<form method="post">
+    {{ form.username|as_crispy_field }}
+    {{ form.password|as_crispy_field }}
+    {% csrf_token %}
+    <p><input type="submit" value="Zaloguj"></p>
+</form>
+{% endblock %}
