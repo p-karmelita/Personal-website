@@ -6,7 +6,9 @@
 
 {% block content %}
 <h1>Logowanie</h1>
-<p>Wypełnij poniższy formularz, aby się zalogować:</p>
+<p>Wypełnij poniższy formularz, aby się zalogować:
+Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" %}">tutaj</a>.
+</p>
 <form method="post">
     {{ form.username|as_crispy_field }}
     {{ form.password|as_crispy_field }}
