@@ -8,6 +8,12 @@ class UserEditForm(forms.ModelForm):
         model = User
         fields = ['first_name', 'last_name', 'email']
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        qs = User.objects.exclude(id=self.instance.id).filter(email=data)
+        if qs.exists():
+            raise forms.ValidationError(' Ten adres e-mail jest zajęty.')
+        return data
 
 class ProfileEditForm(forms.ModelForm):
     class Meta:
@@ -35,3 +41,9 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Hasła nie są identyczne.')
         return cd['password2']
+
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError('Ten adres e-mail już jest używany.')
+        return data
