@@ -20,4 +20,13 @@ Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" 
     Zapomniałeś hasła?
     </a>
 </p>
+<div class="social">
+    <ul>
+        <li class="facebook">
+            <a href="{% url "social:begin" "facebook" %}">
+            Zaloguj się za pomocą konta Facebook
+            </a>
+        </li>
+    </ul>
+</div>
 {% endblock %}
