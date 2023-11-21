@@ -72,4 +72,10 @@ class Comment(models.Model):
 
 
 class Project(models.Model):
-    pass
+    title = models.CharField(max_length=80)
+    url = models.URLField(max_length=120)
+    slug = models.SlugField(max_length=150)
+    description = models.TextField()
+
+    tags = TaggableManager()
+    objects = models.Manager()
