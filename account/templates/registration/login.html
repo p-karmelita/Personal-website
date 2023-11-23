@@ -27,6 +27,11 @@ Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" 
             Zaloguj się za pomocą konta Facebook
             </a>
         </li>
+        <li class="twitter">
+            <a href="{% url "social:begin"  "twitter" %}">
+            Zaloguj się za pomocą konta Twitter
+            </a>
+        </li>
     </ul>
 </div>
 {% endblock %}
