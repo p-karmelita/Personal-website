@@ -32,6 +32,11 @@ Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" 
             Zaloguj się za pomocą konta Twitter
             </a>
         </li>
+        <li class="google">
+            <a href="{% url "social:begin"  "google-oauth2" %}">
+            Zaloguj się za pomocą konta Google
+            </a>
+        </li>
     </ul>
 </div>
 {% endblock %}
