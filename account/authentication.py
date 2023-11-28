@@ -25,4 +25,5 @@ class EmailAuthBackend:
         """
         Utwórz profil użytkownika do uwierzytelniania społecznościowego
         """
+        Profile.objects.get_or_create(user=user)
         
