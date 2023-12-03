@@ -48,6 +48,10 @@ def user_login(request):
     return render(request, 'account/login.html', {'form': form})
 
 
+def home(request):
+    return render(request, 'mysite/base.html')
+
+
 @login_required
 def dashboard(request):
     return render(request,
