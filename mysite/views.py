@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
 from django.db.models import Count
 from django.contrib.postgres.search import TrigramSimilarity
-from .models import Post, Comment
+from .models import Post, Comment, Project
 from .forms import EmailPostForm, CommentForm, SearchForm
 from taggit.models import Tag
 
@@ -124,3 +124,8 @@ def post_search(request):
                   {'form': form,
                    'query': query,
                    'results': results})
+
+
+def project_detail(request, slug):
+    project = get_object_or_404(Project, slug=slug)
+    return render(request, 'project_detail.html', {'project': project})

@@ -7,6 +7,7 @@ app_name = 'mysite'
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
+    path('project/<slug:slug>/', views.project_detail, name='project_detail'),
     # path('', views.PostListView.as_view(), name='post_list'),
     path('tag/<slug:tag_slug>/',
              views.post_list, name='post_list_by_tag'),
