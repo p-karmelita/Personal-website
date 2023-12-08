@@ -7,10 +7,10 @@ app_name = 'mysite'
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
-    path('project/<slug:slug>/', views.project_detail, name='project_detail'),
+    path('projects/', views.all_projects, name='all_projects'),
+    path('project-detail/', views.project_detail, name='project_detail'),
     # path('', views.PostListView.as_view(), name='post_list'),
-    path('tag/<slug:tag_slug>/',
-             views.post_list, name='post_list_by_tag'),
+    path('tag/<slug:tag_slug>/', views.post_list, name='post_list_by_tag'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail'),
     path('<int:post_id>/share/', views.post_share, name='post_share'),
     path('<int:post_id>/comment/',

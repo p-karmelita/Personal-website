@@ -126,6 +126,11 @@ def post_search(request):
                    'results': results})
 
 
+def all_projects(request):
+    projects = Project.objects.all()
+    return render(request, 'mysite/projects/projects.html', {'projects': projects})
+
+
 def project_detail(request, slug):
-    project = get_object_or_404(Project, slug=slug)
-    return render(request, 'project_detail.html', {'project': project})
+    detail = get_object_or_404(Project, slug=slug)
+    return render(request, 'mysite/projects/project_detail.html', {'detail': detail})
