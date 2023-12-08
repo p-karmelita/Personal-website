@@ -1,11 +1,8 @@
 {% extends "mysite/base.html" %}
-{% block title %}{{ project.title }}{% endblock %}
+{% block title %}{{ p_details.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ project.title }}</h1>
-    <p>{{ project.description }}</p>
-    <p>{{ project.title }}</p>
-    <p>{{ project.url }}</p>
-    <p>{{ project.slug }}</p>
-    <p>{{ project.description }}</p>
+    <p>{{ p_details.title }}</p>
+    <p>{{ p_details.url }}</p>
+    <p>{{ p_details.description }}</p>
 {% endblock %}

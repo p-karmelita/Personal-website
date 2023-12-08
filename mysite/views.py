@@ -131,6 +131,6 @@ def all_projects(request):
     return render(request, 'mysite/projects/projects.html', {'projects': projects})
 
 
-def project_detail(request, slug):
-    detail = get_object_or_404(Project, slug=slug)
-    return render(request, 'mysite/projects/project_detail.html', {'detail': detail})
+def project_detail(request, project_slug):
+    p_details = get_object_or_404(Project, slug=project_slug)
+    return render(request, 'mysite/projects/project_detail.html', {'p_details': p_details})

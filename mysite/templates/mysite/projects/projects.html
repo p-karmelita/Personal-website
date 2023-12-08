@@ -3,6 +3,6 @@
 
 {% block content %}
 {% for project in projects %}
-{{ project.title }}<br>
+    <a href="{% url 'mysite:project_detail' project.slug %}"><p>{{ project.title }}</p></a>
 {% endfor %}
 {% endblock %}
