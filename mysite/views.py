@@ -1,12 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
 from django.db.models import Count
 from django.contrib.postgres.search import TrigramSimilarity
+from django.http import HttpResponse
 from .models import Post, Comment, Project
-from .forms import EmailPostForm, CommentForm, SearchForm
+from .forms import EmailPostForm, CommentForm, SearchForm, ContactForm
 from taggit.models import Tag
 
 
@@ -134,3 +135,30 @@ def all_projects(request):
 def project_detail(request, project_slug):
     p_details = get_object_or_404(Project, slug=project_slug)
     return render(request, 'mysite/projects/project_detail.html', {'p_details': p_details})
+
+
+def success(request):
+    return render(request, 'mysite/contact/success.html')
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            send_mail(
+                name,
+                message,
+                email,
+                ['karpiotr90@gmail.com'],
+                fail_silently=False,
+            )
+
+            return redirect('mysite:success')
+    else:
+        form = ContactForm()
+
+    return render(request, 'mysite/contact/contact.html', {'form': form})

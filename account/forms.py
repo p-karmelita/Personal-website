@@ -15,6 +15,7 @@ class UserEditForm(forms.ModelForm):
             raise forms.ValidationError(' Ten adres e-mail jest zajęty.')
         return data
 
+
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
