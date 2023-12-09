@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Project
+from .models import Post, Comment, Project, About
 
 
 @admin.register(Post)
@@ -21,3 +21,4 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Project)
+admin.site.register(About)

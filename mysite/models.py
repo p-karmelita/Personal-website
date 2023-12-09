@@ -82,3 +82,8 @@ class Project(models.Model):
 
     def __str__(self):
         return f'Project {self.title}'
+
+
+class About(models.Model):
+    description = models.TextField()
+    photo = models.ImageField()

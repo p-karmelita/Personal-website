@@ -6,7 +6,7 @@ from django.views.decorators.http import require_POST
 from django.db.models import Count
 from django.contrib.postgres.search import TrigramSimilarity
 from django.http import HttpResponse
-from .models import Post, Comment, Project
+from .models import Post, Comment, Project, About
 from .forms import EmailPostForm, CommentForm, SearchForm, ContactForm
 from taggit.models import Tag
 
@@ -162,3 +162,8 @@ def contact(request):
         form = ContactForm()
 
     return render(request, 'mysite/contact/contact.html', {'form': form})
+
+
+def about(request):
+    about_me = About.objects.all()
+    return render(request, 'mysite/about/about.html', {'about_me': about_me})

@@ -11,6 +11,7 @@ urlpatterns = [
     path('projects/<slug:project_slug>/', views.project_detail, name='project_detail'),
     path('contact/', views.contact, name='contact'),
     path('success/', views.success, name='success'),
+    path('about/', views.about, name='about'),
     # path('', views.PostListView.as_view(), name='post_list'),
     path('tag/<slug:tag_slug>/', views.post_list, name='post_list_by_tag'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail'),
