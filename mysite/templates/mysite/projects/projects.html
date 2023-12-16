@@ -3,6 +3,11 @@
 
 {% block content %}
 {% for project in projects %}
-    <a href="{% url 'mysite:project_detail' project.slug %}"><p>{{ project.title }}</p></a>
+    <div class="col-md-4">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description|slice:":10"|default:'' }}{% if project.description|length > 10 %}...{% endif %}</p>
+        <p><a class="btn btn-secondary" href="{% url 'mysite:project_detail' project.slug %}" role="button">Szczegóły &raquo;</a></p>
+    </div>
 {% endfor %}
+
 {% endblock %}
