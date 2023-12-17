@@ -13,7 +13,7 @@ Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" 
     {{ form.username|as_crispy_field }}
     {{ form.password|as_crispy_field }}
     {% csrf_token %}
-    <p><input type="submit" value="Zaloguj"></p>
+    <p><input type="submit" value="Zaloguj" class="btn btn-outline-dark"></p>
 </form>
 <p>
     <a href="{% url "password_reset" %}">
