@@ -18,7 +18,7 @@
       {{ form.to|as_crispy_field }}
       {{ form.comments|as_crispy_field }}
       {% csrf_token %}
-      <input type="submit" value="Wyślij wiadomość e-mail">
+      <input type="submit" value="Wyślij wiadomość e-mail"  class="btn btn-outline-dark">
     </form>
   {% endif %}
 {% endblock %}
