@@ -116,7 +116,7 @@ def post_comment(request, post_id):
 
 def post_search(request):
     form = SearchForm()
-    query = None
+    query = ''
     results = []
 
     if 'query' in request.GET:
