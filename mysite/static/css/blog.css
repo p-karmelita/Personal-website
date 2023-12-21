@@ -35,6 +35,8 @@ ul.messages li a.close {
     text-shadow:none;
 }
 
-html body main div.jumbotron div.container div#content h2 {
-    color: #000000;
+h2 {
+    font-weight:normal;
+    margin:30px;
+    color: #6b6b6b;
 }
