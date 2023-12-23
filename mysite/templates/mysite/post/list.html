@@ -4,6 +4,8 @@
 {% block title %}Strona Internetowa Piotra Karmelity{% endblock %}
 
 {% block content %}
+  <div class="row">
+ <div class="col-8">
 {% if tag %}
 <h2>Posty oznaczone tagiem "{{ tag.name }}"</h2>
 {% endif %}
@@ -27,6 +29,8 @@
     {{ post.body|markdown|truncatewords_html:30 }}
   {% endfor %}
 {% include "pagination.html" with page=posts %}
+   </div>
+<div class="col-4">
 Dotychczas opublikowałem {% total_posts %} postów.
 <p>Najnowsze posty:</p>
 {% show_latest_posts 3 %}
@@ -44,4 +48,6 @@ Dotychczas opublikowałem {% total_posts %} postów.
   <a href="{% url "mysite:post_feed" %}">
   Subskrybuj mój kanał RSS</a>
 </p>
+  </div>
+    </div>
 {% endblock %}
