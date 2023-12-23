@@ -1,7 +1,9 @@
 {% extends "mysite/base.html" %}
 {% load mysite_tags %}
 {% load mysite_tags %}
+{% load static %}
 {% block title %}Strona Internetowa Piotra Karmelity{% endblock %}
+
 
 {% block content %}
   <div class="row">
@@ -44,9 +46,8 @@ Dotychczas opublikowałem {% total_posts %} postów.
   {% endfor %}
 </ul>
 <p>
-
-  <a href="{% url "mysite:post_feed" %}">
-  Subskrybuj mój kanał RSS</a>
+<img class="rss" style="background-image: url('{% static 'oxygen_rss.png' %}'); background-size: 20px; padding-left: 25px; background-repeat: no-repeat; display: inline-block; height: 20px; width: 20px;"></img>
+  <a href="{% url "mysite:post_feed" %}">Subskrybuj mój kanał RSS</a>
 </p>
   </div>
     </div>
