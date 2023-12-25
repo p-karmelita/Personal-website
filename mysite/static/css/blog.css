@@ -40,14 +40,3 @@ h2 {
     margin:30px;
     color: #6b6b6b;
 }
-
-.facebook-share {
-    background-image: url('mysite/static/fbshare.png');
-    background-size: cover;
-    display: inline-block;
-    height: 32px; /* Dostosuj wysokość ikony do potrzeb */
-    width: 32px; /* Dostosuj szerokość ikony do potrzeb */
-    overflow: hidden; /* Ukryj tekst, który może być poza obszarem ikony */
-    text-indent: 100%; /* Przesuń tekst poza obszar widoczny */
-    white-space: nowrap; /* Zapobiegnij złamaniu tekstu do nowej linii */
-}
