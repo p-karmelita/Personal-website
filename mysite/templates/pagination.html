@@ -1,19 +1,37 @@
-<div class="pagination">
-  <span class="step-links">
-    {% if page.paginator.num_pages > 1 %}
-      {% if page.has_previous %}
-        <a href="?page={{ page.previous_page_number }}">Poprzednia</a>
-      {% endif %}
-      <span class="current">
-        Strona {{ page.number }} z {{ page.paginator.num_pages }}.
-      </span>
-      {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}">Następna</a>
-      {% endif %}
+<nav aria-label="Page navigation example">
+ <br> <ul class="pagination">
+    <li class="page-item">
+      {% if page.paginator.num_pages > 1 %}
+        {% if page.has_previous %}
+          <a class="page-link" href="?page={{ page.previous_page_number }}" aria-label="Poprzednia">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        {% endif %}
+      </li>
+
+      {% for num in page.paginator.page_range %}
+        <li class="page-item{% if page.number == num %} active{% endif %}">
+          <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+      {% endfor %}
+
+      <li class="page-item">
+        {% if page.has_next %}
+          <a class="page-link" href="?page={{ page.next_page_number }}" aria-label="Następna">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        {% endif %}
+      </li>
     {% else %}
-      <span class="current">
-        Strona 1.
-      </span>
+      <li class="page-item disabled">
+        <span class="page-link" aria-hidden="true">&laquo;</span>
+      </li>
+      <li class="page-item active">
+        <span class="page-link">1</span>
+      </li>
+      <li class="page-item disabled">
+        <span class="page-link" aria-hidden="true">&raquo;</span>
+      </li>
     {% endif %}
-  </span>
-</div>
+  </ul>
+</nav>
