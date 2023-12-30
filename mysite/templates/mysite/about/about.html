@@ -8,7 +8,7 @@
   <div>
     {% for about_me_entry in about_me %}
       <p>{{ about_me_entry.description }}</p>
-      <img src="{{ about_me_entry.photo.url }}" alt="{{ about_me_entry.description }}">
+      <img src="{{ about_me_entry.photo.url }}" alt="{{ about_me_entry.description }}" class="rounded-circle">
     {% endfor %}
   </div>
 {% endblock %}

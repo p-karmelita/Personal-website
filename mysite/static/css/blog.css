@@ -51,7 +51,14 @@ h2 {
 .panel {
     margin-top: 30px;
 }
-.row {
-    background-color: #6cb4ef;
+
+.col-md-4 {
+    background-color: #bfc5cb;
     border-radius: 5px;
+    padding-bottom: 5px;
+}
+
+.project-title {
+    margin-left: 2px;
+    padding-top: 5px;
 }
