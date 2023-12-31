@@ -34,21 +34,24 @@
 {% include "pagination.html" with page=posts %}
 
    </div>
-<div class="col-4"><h5><span class="badge badge-secondary">
-Dotychczas opublikowałem {% total_posts %} posta.</span></h5>
-Najnowsze posty:
-{% show_latest_posts 3 %}
+<div class="col-4">
+  <p class="list-group-item"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;
+Dotychczas opublikowałem {% total_posts %} posta. </p>
 
+<p class="list-group-item"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
+    Najnowsze posty:</p>
 
-  Najczęściej komentowane posty <p>{% get_most_commented_posts as most_commented_posts %}</p>
+        {% show_latest_posts 3 %}
+
+<p class="list-group-item" ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp;
+  Najczęściej komentowane posty {% get_most_commented_posts as most_commented_posts %}</p>
 
   {% for post in most_commented_posts %}
-
-    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a><br>
+    <ul class="fa-ul">
+  <li><i class="fa-li fa fa-check-square"></i><a href="{{ post.get_absolute_url }}" class="comment-url"><span class="badge badge-light">{{ post.title }}</span></a><br></li>
+    </ul>
 
   {% endfor %}
-
-
   </div>
 
     </div>

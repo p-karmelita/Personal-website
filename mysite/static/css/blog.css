@@ -66,3 +66,7 @@ h2 {
 body {
     background-color: #f2cdb1;
 }
+
+.comment-url {
+    color: black;
+}
