@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'social_django',
     'django_extensions',
+    'fontawesomefree',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
