@@ -6,6 +6,10 @@
   <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- One file includes all the Font Awesome Free icons and utilities -->
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -25,7 +29,8 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="{% url "home" %}">Piotr Karmelita</a>
+    <a class="navbar-brand" href="{% url "home" %}"><i class="fas fa-home"></i>
+</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
         aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
