@@ -2,16 +2,16 @@
 {% block title %}Dotychczasowe projekty{% endblock %}
 
 {% block content %}
-{% for project in projects %}
+  {% for project in projects %}
     <div class="col-md-4">
-
-       <h2 class="project-title">    <span class="fa-stack fa-lg">
-
-  <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
-</span><span class="badge badge-secondary">{{ project.title }}</h2></span>
-        <p>{{ project.description|slice:":10"|default:'' }}{% if project.description|length > 10 %}...{% endif %}</p>
-        <p><a class="btn btn-secondary" href="{% url 'mysite:project_detail' project.slug %}" role="button">Szczegóły &raquo;</a></p>
+      <h2 class="project-title">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+        </span>
+        <span class="badge badge-secondary">{{ project.title }}</span>
+      </h2>
+      <p>{{ project.description|slice:":10"|default:'' }}{% if project.description|length > 10 %}...{% endif %}</p>
+      <p><a class="btn btn-secondary" href="{% url 'mysite:project_detail' project.slug %}" role="button">Szczegóły &raquo;</a></p>
     </div>
-{% endfor %}
-
+  {% endfor %}
 {% endblock %}

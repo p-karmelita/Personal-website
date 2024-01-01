@@ -1,6 +1,5 @@
 {% extends "mysite/base.html" %}
 {% load mysite_tags %}
-
 {% load social_share %}
 
 {% block title %}{{ post.title }}{% endblock %}
@@ -13,20 +12,20 @@
   {{ post.body|markdown }}
   <p>
     <a href="{% url "mysite:post_share" post.id %}">
-    Udostępnij post
+      Udostępnij post
     </a>
-     {% post_to_facebook object_or_url %}
-     {% post_to_linkedin "Udostępnij na LinkedIn." %}
+    {% post_to_facebook object_or_url %}
+    {% post_to_linkedin "Udostępnij na LinkedIn." %}
   </p>
-<h3>Podobne posty</h3>
-{% for post in similar_posts %}
-<p>
-  <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-</p>
-{% empty %}
-Nie ma jeszcze podobnych postów.
-{% endfor %}
-{% with comments.count as total_comments %}
+  <h3>Podobne posty</h3>
+  {% for post in similar_posts %}
+    <p>
+      <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </p>
+  {% empty %}
+    Nie ma jeszcze podobnych postów.
+  {% endfor %}
+  {% with comments.count as total_comments %}
     <h2>
       {{ total_comments }} comment{{ total_comments|pluralize }}
     </h2>
