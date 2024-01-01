@@ -41,9 +41,15 @@ h2 {
     color: #6b6b6b;
 }
 
+.h3-post {
+    font-weight: normal;
+    color: #6b6b6b;
+    margin: 10px 10px 10px 18px;
+}
+
 .col-4 {
     margin-top: 30px;
-    background-color: #a2a2a2;
+    background-color: #e7e5e5;
     padding: 10px;
     border-radius: 5px;
 }
@@ -88,10 +94,36 @@ body {
 }
 
 .col-4 > ul:nth-child(4) {
-    background-color: #f2cdb1;
+    background-color: #ffffff;
 }
 
 .col-4 > ul:nth-child(4) li::marker {
     content: "\1F4DD";
     padding-right: 5px;
+}
+
+.col-8 {
+    background-color: #f7ede5;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.tags {
+    margin: 1px;
+}
+
+.date {
+    margin: 1px;
+}
+
+span.badge:nth-child(4) {
+    background-color: #f9d18b;
+}
+
+span.badge:nth-child(8) {
+    background-color: #f9d18b;
+}
+
+span.badge:nth-child(12) {
+    background-color: #f9d18b;
 }
