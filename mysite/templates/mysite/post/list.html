@@ -5,12 +5,20 @@
 {% block title %}Strona Internetowa Piotra Karmelity{% endblock %}
 
 {% block content %}
+
   <div class="row">
     <div class="col-8">
 
-      {% if tag %}
-        <h2>Posty oznaczone tagiem "{{ tag.name }}"</h2>
-      {% endif %}
+
+
+      <div class="card text-center">
+  <div class="card-header">
+
+ <form method="get" action="{% url 'mysite:post_search' %}" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" name="query" placeholder="Szukaj w postach" aria-label="Search" value="{{ query }}">
+                <button class="btn btn-outline-light" type="submit">Szukaj</button>
+            </form>
+
 
       {% for post in posts %}
         <h3 class="h3-post">
@@ -32,19 +40,22 @@
         </p>
         <span class="badge badge-warning">{{ post.body|markdown|truncatechars_html:50 }} </span>
       {% endfor %}
+{% include "pagination.html" with page=posts %}
 
-      {% include "pagination.html" with page=posts %}
+
+    </p>
+
+  </div>
+</div>
 
     </div>
     <div class="col-4">
       <p class="list-group-item"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;
         Dotychczas opublikowałem {% total_posts %} posta. </p>
 
-      <p class="list-group-item"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
-        Najnowsze posty:</p>
 
-      <p class="last-posts">
-        {% show_latest_posts 3 %}</p>
+
+
 
       <p class="list-group-item" ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp;
         Najczęściej komentowane posty {% get_most_commented_posts as most_commented_posts %}</p>

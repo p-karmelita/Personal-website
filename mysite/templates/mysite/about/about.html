@@ -5,10 +5,32 @@
 {% block title %}O mnie{% endblock %}
 
 {% block content %}
-  <div>
-    {% for about_me_entry in about_me %}
-      <p>{{ about_me_entry.description }}</p>
-      <img src="{{ about_me_entry.photo.url }}" alt="{{ about_me_entry.description }}" class="rounded-circle">
-    {% endfor %}
+
+<div class="card-body">
+    <p class="card-text">
+
+      <div class="card" style="width: 22rem;">
+  {% for about_me_entry in about_me %}
+  <div class="card">
+  <div class="card-header">
+    Motto
   </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>“Cierpliwość i wytrwałość mają magiczne działanie ? dzięki nim trudności znikają, a przeszkody ulatniają się.”</p>
+      <footer class="blockquote-footer">John Quincy Adam</footer>
+    </blockquote>
+  </div>
+</div>
+  <img src="{{ about_me_entry.photo.url }}" class="card-img-top" alt="my-photo">
+  <div class="card-body">
+    <h5 class="card-title">Piotr Karmelita</h5>
+    <p class="card-text">{{ about_me_entry.description }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  {% endfor %}
+</div>
+
+
+
 {% endblock %}

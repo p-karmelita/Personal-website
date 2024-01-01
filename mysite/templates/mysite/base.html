@@ -57,10 +57,7 @@
                     <a class="nav-link" href="{% url "mysite:about" %}">O mnie<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form method="get" action="{% url 'mysite:post_search' %}" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" name="query" placeholder="Szukaj" aria-label="Search" value="{{ query }}">
-                <button class="btn btn-outline-light" type="submit">Szukaj</button>
-            </form>
+
         </div>
     </nav>
 

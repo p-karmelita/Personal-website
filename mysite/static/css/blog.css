@@ -93,14 +93,7 @@ body {
     text-decoration: none;
 }
 
-.col-4 > ul:nth-child(4) {
-    background-color: #ffffff;
-}
 
-.col-4 > ul:nth-child(4) li::marker {
-    content: "\1F4DD";
-    padding-right: 5px;
-}
 
 .col-8 {
     background-color: #f7ede5;
@@ -126,4 +119,8 @@ span.badge:nth-child(8) {
 
 span.badge:nth-child(12) {
     background-color: #f9d18b;
+}
+
+.project-title {
+    margin-left: -25px;
 }
