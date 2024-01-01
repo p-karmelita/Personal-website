@@ -69,4 +69,30 @@ body {
 
 .comment-url {
     color: black;
+    text-decoration: none;
 }
+
+.col-4 > ul:nth-child(4) > li:nth-child(1) > a:nth-child(1) {
+    color: #000000;
+    text-decoration: none;
+}
+
+.col-4 > ul:nth-child(4) > li:nth-child(2) > a:nth-child(1) {
+    color: #000000;
+    text-decoration: none;
+}
+
+.col-4 > ul:nth-child(4) > li:nth-child(3) > a:nth-child(1) {
+    color: #000000;
+    text-decoration: none;
+}
+
+.col-4 > ul:nth-child(4) {
+    background-color: #f2cdb1;
+}
+
+.col-4 > ul:nth-child(4) li::marker {
+   content: "\1F4DD";
+    padding-right: 5px;
+}
+
