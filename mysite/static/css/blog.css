@@ -44,7 +44,7 @@ h2 {
 .h3-post {
     font-weight: normal;
     color: #6b6b6b;
-    margin: 10px 10px 10px 18px;
+    margin-bottom: 1px;
 }
 
 .col-4 {
@@ -70,7 +70,7 @@ h2 {
 }
 
 body {
-    background-color: #f2cdb1;
+    background-color: #efdaca;
 }
 
 .comment-url {
@@ -91,6 +91,12 @@ body {
 .col-4 > ul:nth-child(4) > li:nth-child(3) > a:nth-child(1) {
     color: #000000;
     text-decoration: none;
+}
+
+.posts {
+    background-color: #eeeaea;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .col-8 {

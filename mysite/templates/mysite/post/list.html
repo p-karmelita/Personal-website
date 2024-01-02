@@ -10,24 +10,26 @@
         <div class="card text-center">
             <div class="card-header">
                 {% for post in posts %}
-                <h3 class="h3-post">
-                    <a href="{{ post.get_absolute_url }}">
-                        <span class="badge badge-light" style="margin-left: -30px;">{{ post.title }}</span>
-                    </a>
-                </h3>
-                <p class="tags">
-                    <span class="badge badge-light"> Tagi:
-                        {% for tag in post.tags.all %}
-                        <a href="{% url "mysite:post_list_by_tag" tag.slug %}">
-                            {{ tag.name }}</a>
-                        {% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </span>
-                </p>
-                <p class="date">
-                    <span class="badge badge-dark">Opublikowany {{ post.publish }} by {{ post.author }} </span>
-                </p>
-                <span class="badge badge-warning">{{ post.body|markdown|truncatechars_html:50 }} </span>
+                <div class="posts">
+                    <h3 class="h3-post">
+                        <a href="{{ post.get_absolute_url }}">
+                            <span class="badge badge-light">{{ post.title }}</span>
+                        </a>
+                    </h3>
+                    <p class="tags">
+                        <span class="badge badge-light"> Tagi:
+                            {% for tag in post.tags.all %}
+                            <a href="{% url "mysite:post_list_by_tag" tag.slug %}">
+                                {{ tag.name }}</a>
+                            {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </span>
+                    </p>
+                    <p class="date">
+                        <span class="badge badge-dark">Opublikowany {{ post.publish }} by {{ post.author }} </span>
+                    </p>
+                    <span class="badge badge-warning">{{ post.body|markdown|truncatechars_html:50 }} </span>
+                </div>
                 {% endfor %}
                 {% include "pagination.html" with page=posts %}
             </div>
