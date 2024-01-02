@@ -14,10 +14,7 @@
       <div class="card text-center">
   <div class="card-header">
 
- <form method="get" action="{% url 'mysite:post_search' %}" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" name="query" placeholder="Szukaj w postach" aria-label="Search" value="{{ query }}">
-                <button class="btn btn-outline-light" type="submit">Szukaj</button>
-            </form>
+
 
 
       {% for post in posts %}

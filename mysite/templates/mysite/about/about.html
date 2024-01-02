@@ -5,8 +5,19 @@
 {% block title %}O mnie{% endblock %}
 
 {% block content %}
-
-<div class="card-body">
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">O mnie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Skills</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="card-body">
     <p class="card-text">
 
       <div class="card" style="width: 22rem;">
@@ -26,10 +37,16 @@
   <div class="card-body">
     <h5 class="card-title">Piotr Karmelita</h5>
     <p class="card-text">{{ about_me_entry.description }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Resume</a>
   </div>
   {% endfor %}
+    </div>
+
+  </div>
 </div>
+
+
+
 
 
 
