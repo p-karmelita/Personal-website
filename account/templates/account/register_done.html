@@ -3,7 +3,7 @@
 {% block title %}Witaj{% endblock %}
 
 {% block content %}
-<h1>Witaj {{ new_user.first_name }}!</h1>
+<h2 class="panel"><span class="badge badge-secondary">Witaj {{ new_user.first_name }}!</span></h2>
 <p>
     Twoje konto zostało utworzone.
     Możesz się już <a href="{% url "login" %}">zalogować</a>.

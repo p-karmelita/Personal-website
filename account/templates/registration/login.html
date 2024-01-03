@@ -5,9 +5,9 @@
 {% block title %}Logowanie{% endblock %}
 
 {% block content %}
-<h1>Logowanie</h1>
+<h2 class="panel"><span class="badge badge-secondary">Logowanie</span></h2>
 <p>Wypełnij poniższy formularz, aby się zalogować:
-Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" %}">tutaj</a>.
+Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" %}"><span class="badge badge-primary">tutaj</span></a>.
 </p>
 <form method="post">
     {{ form.username|as_crispy_field }}
@@ -17,26 +17,7 @@ Jeżeli nie masz jeszcze konta, możesz je utworzyć <a href="{% url "register" 
 </form>
 <p>
     <a href="{% url "password_reset" %}">
-    Zapomniałeś hasła?
+    <span class="badge badge-primary">Zapomniałeś hasła?</span>
     </a>
 </p>
-<div class="social">
-    <ul>
-        <li class="facebook">
-            <a href="{% url "social:begin" "facebook" %}">
-            Zaloguj się za pomocą konta Facebook
-            </a>
-        </li>
-        <li class="twitter">
-            <a href="{% url "social:begin"  "twitter" %}">
-            Zaloguj się za pomocą konta Twitter
-            </a>
-        </li>
-        <li class="google">
-            <a href="{% url "social:begin"  "google-oauth2" %}">
-            Zaloguj się za pomocą konta Google
-            </a>
-        </li>
-    </ul>
-</div>
 {% endblock %}

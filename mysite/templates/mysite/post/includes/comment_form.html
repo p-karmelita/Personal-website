@@ -3,8 +3,10 @@
 <h5><span class="badge badge-secondary">Dodaj nowy komentarz</span></h5>
 <form action="{% url "mysite:post_comment" post.id %}" method="post">
 {% csrf_token %}
-{{ form.name|as_crispy_field }}
-{{ form.email|as_crispy_field }}
-{{ form.body|as_crispy_field }}
+<span class="badge badge-light">
+    {{ form.name|as_crispy_field }}
+    {{ form.email|as_crispy_field }}
+    {{ form.body|as_crispy_field }}
+</span>
 <p><input type="submit" value="Dodaj komentarz" class="btn btn-outline-dark"></p>
 </form>

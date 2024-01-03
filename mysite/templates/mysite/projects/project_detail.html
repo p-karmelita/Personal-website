@@ -2,7 +2,11 @@
 {% block title %}{{ p_details.title }}{% endblock %}
 
 {% block content %}
-    <p>{{ p_details.title }}</p>
-    <p>{{ p_details.url }}</p>
-    <p>{{ p_details.description }}</p>
+
+<div class="card bg-light mb-3" style="max-width: 36rem; margin-top: 30px;">
+  <div class="card-header"><h3 style="text-align: center;">{{ p_details.title }}</h3></div>
+  <div class="card-body">
+    <h5 class="card-title" style="text-align: center;"><span class="badge badge-pill badge-light">{{ p_details.url }}</span></h5>
+    <p class="card-text"><p style="text-align: center;">{{ p_details.description }}</p></p>
+  </div>
 {% endblock %}

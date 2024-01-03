@@ -13,23 +13,23 @@
     <p class="card-text">{{ post.body|markdown }}</p>
      <p>
     <a href="{% url "mysite:post_share" post.id %}">
-      Udostępnij post
+      <h5><span class="badge badge-secondary">Udostępnij post</span></h5>
     </a>
-    {% post_to_facebook object_or_url %}
+    <span class="badge badge-primary"> {% post_to_facebook object_or_url %}</span>
     {% post_to_linkedin "Udostępnij na LinkedIn." %}
   </p>
   {% with comments.count as total_comments %}
     <h3>
-      {{ total_comments }} comment{{ total_comments|pluralize }}
+      <span class="badge badge-light">{{ total_comments }} comment{{ total_comments|pluralize }}</span>
     </h3>
   {% endwith %}
   {% for comment in comments %}
     <div class="comment">
       <p class="info">
-        Komentarz {{ forloop.counter }} dodany przez {{ comment.name }}
-        {{ comment.created }}
+      <span class="badge badge-light">  Komentarz {{ forloop.counter }} dodany przez {{ comment.name }}
+        {{ comment.created }} </span>
       </p>
-      {{ comment.body|linebreaks }}
+      <span class="badge badge-info">{{ comment.body|linebreaks }}</span>
     </div>
   {% empty %}
     <p>Nie ma jeszcze żadnych komentarzy.</p>
