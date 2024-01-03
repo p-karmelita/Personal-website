@@ -127,3 +127,7 @@ span.badge:nth-child(12) {
 .project-title {
     margin-left: -25px;
 }
+
+.post-detail {
+    background-color: #f9d18b;
+}

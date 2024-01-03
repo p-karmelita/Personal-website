@@ -1,6 +1,6 @@
 {% load crispy_forms_tags %}
 
-<h2>Dodaj nowy komentarz</h2>
+<h5><span class="badge badge-secondary">Dodaj nowy komentarz</span></h5>
 <form action="{% url "mysite:post_comment" post.id %}" method="post">
 {% csrf_token %}
 {{ form.name|as_crispy_field }}

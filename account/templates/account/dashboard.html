@@ -3,7 +3,8 @@
 {% block title %}Panel główny{% endblock %}
 
 {% block content %}
-<h1 class="panel">Panel główny</h1>
-<p>Witaj w panelu głównym {{ user.username }}. Możesz <a href="{% url "edit" %}">edytować profil </a>lub <a href="{% url "password_change" %}">zmienić hasło</a>.</p>
+
+<h2 class="panel"><span class="badge badge-secondary">Panel główny</span></h2>
+<p>Witaj w panelu głównym {{ user.username }}. Możesz <span class="badge badge-light"><a href="{% url "edit" %}">edytować profil </a></span> lub <span class="badge badge-light"><a href="{% url "password_change" %}">zmienić hasło</a>.</span></p>
 
 {% endblock %}
